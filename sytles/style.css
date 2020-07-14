@@ -1,15 +1,30 @@
 * {
 	margin: 0;
 	padding: 0;
-	box-sizing: border-box;
+    box-sizing: border-box;
+    
 }
 
 html { 
-    background: black; 
+    background: #1C2026;    
+}
+
+body {
+    animation: opening 1.5s ease-in-out;    
 }
 
 canvas { 
     margin:auto; 
     margin-top: 5%;
-    border-radius: 25px;
+    border-radius: 25px;   
+    background: #1C2026;     
+}
+
+@keyframes opening {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
 }

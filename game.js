@@ -34,7 +34,7 @@ function addPlatforms() {
   platforms.create(300, 450, 'platform');
   platforms.create(420, 350, 'platform');
   platforms.create(50, 400, 'platform');
-  platforms.create(660, 300, 'platform');
+  platforms.create(600, 300, 'platform');
   platforms.create(150, 270, 'platform');
   platforms.create(480, 200, 'platform');
   platforms.create(280, 125, 'platform');
@@ -51,7 +51,7 @@ function createItem(left, top, image) {
 // create the winning badge and add to screen
 function createBadge() {
   badges = game.add.physicsGroup();
-  var badge = badges.create(750, 400, 'badge');
+  let badge = badges.create(750, 400, 'badge');
   badge.animations.add('spin');
   badge.animations.play('spin', 10, true);
 }
@@ -76,9 +76,9 @@ window.onload = function () {
   game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create, update: update, render: render });  
   // before the game begins
   function preload() {
-    game.stage.backgroundColor = '#5db1ad';    
+    game.stage.backgroundColor = '#439FD9';     
     //Load images
-    game.load.image('platform', 'imgs/platform_1.png');    
+    game.load.image('platform', 'imgs/platform_2.png');    
     //Load spritesheets
     game.load.spritesheet('player', 'imgs/chalkers.png', 48, 62);
     game.load.spritesheet('coin', 'imgs/coin.png', 36, 44);
@@ -96,8 +96,8 @@ window.onload = function () {
     addPlatforms();
     cursors = game.input.keyboard.createCursorKeys();
     jumpButton = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
-    text = game.add.text(16, 16, "SCORE: " + currentScore, { font: "bold 24px Arial", fill: "white" });
-    winningMessage = game.add.text(game.world.centerX, 275, "", { font: "bold 48px Arial", fill: "white" });
+    text = game.add.text(16, 16, "SCORE: " + currentScore, { font: "bold 28px orbitron", fill: "white" });
+    winningMessage = game.add.text(game.world.centerX, 275, "", { font: "bold 72px orbitron", fill: "white" });
     winningMessage.anchor.setTo(0.5, 1);
   }
   // while the game is running
@@ -123,7 +123,7 @@ window.onload = function () {
     else {
       player.animations.stop();
     }
-        
+
     if (jumpButton.isDown && (player.body.onFloor() || player.body.touching.down)) {
       player.body.velocity.y = -400;
     }
